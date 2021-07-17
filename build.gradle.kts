@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version "1.5.21"
     application
 }
 
@@ -13,15 +13,14 @@ repositories {
 }
 
 dependencies {
-    val kotlin_version = "1.4.10"
+    val kotlin_version = "1.5.21"
     testImplementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
-    testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.3.50")
 }
 
 tasks.test {
-    useJUnit()
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile>() {

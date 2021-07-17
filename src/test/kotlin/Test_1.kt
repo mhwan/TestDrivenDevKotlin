@@ -1,8 +1,9 @@
-import kotlin.test.Test
+
+import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
-class Test_1 {
+class Test1 {
     @Test
     fun testDollarMultiplication(){
         val five : Money = Money.dollar(5)
